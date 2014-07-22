@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   #Only respond to requests for JSON
 
+  def default_serializer_options
+    {root: false}
+  end
+
   respond_to :json
   def index
     @articles = Article.all
